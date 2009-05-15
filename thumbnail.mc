@@ -172,7 +172,7 @@ $image->thumb_uri;
 # XXX Yeah yeah, I know I shouldn't call a private method...
 my $path      = $image->_thumb_file;
 my $image_fn  = $image->get_file_name;
-my $thumb_fn  = "$file_prefix$image_fn$file_suffix";
+my $thumb_fn  = "$file_prefix$file_suffix$image_fn";
 (my $uri      = URI::Escape::uri_unescape($image->get_uri))
     =~ s{\Q$image_fn\E$}{$thumb_fn};
 
