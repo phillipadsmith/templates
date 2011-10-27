@@ -77,7 +77,7 @@ story. Defaults to an empty string ("").
 
 =head1 AUTHOR
 
-David Wheeler <david@kineticode.com> 
+David Wheeler <david@kineticode.com>
 Revised by Dawn Buie <dawn@dawnthots.ca>
 
 =head1 COPYRIGHT AND LICENSE

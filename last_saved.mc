@@ -15,16 +15,16 @@ last_saved.mc -- Returns the last time a story was saved
 
 =head1 DESCRIPTION
 
-Outputs the date and/or time that a story was last saved in the UI. 
-This is useful if you want to display a "Last Modified" timestamp 
-that is not affected by republishes. The supported parameters are 
+Outputs the date and/or time that a story was last saved in the UI.
+This is useful if you want to display a "Last Modified" timestamp
+that is not affected by republishes. The supported parameters are
 all optional, and are as follows:
 
 =over 4
 
 =item C<$asset>
 
-The asset from which to get the time of the last save. Useful for 
+The asset from which to get the time of the last save. Useful for
 getting the time for a related story or media asset. Defaults to the
 global C<$story> object.
 
