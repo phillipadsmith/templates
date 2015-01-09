@@ -44,8 +44,8 @@ $caturi => '/Bios'
 <%perl>
 return unless defined $name;
 my @names = ref($name) ? @$name : $name;
-@names = map { 
-    (my $slug = $_) =~ s/\W/_/g; 
+@names = map {
+    (my $slug = $_) =~ s/\W/_/g;
     "<a class=\"contrib-link\" title=\"Bio page for $_\" href=\"$caturi/$slug\">$_</a>"
     } @names;
 # return wantarray ? @names : $names[0];

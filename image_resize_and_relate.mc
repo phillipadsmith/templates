@@ -45,16 +45,16 @@ if ($picture_is_good) {
 </%perl>
 
 <br><br>Found a <% $existing_container->get_key_name %> container.
-<br>Adding its ID(<% $existing_container->get_id %>) to the safe list. Will delete all other <% 
+<br>Adding its ID(<% $existing_container->get_id %>) to the safe list. Will delete all other <%
 $existing_container->get_key_name %> containers.
-       
+
 <%perl>
 
         $check_list{$container_type} = 1;
         $safe_list{$existing_container->get_id} = 1;
-      } 
+      }
     }
-  }	
+  }
 
   #kill any duplicate containers
   foreach my $container_type(keys %element_names_and_sizes) {
@@ -65,13 +65,13 @@ $existing_container->get_key_name %> containers.
 
 <br><br>Found an extra <% $existing_container->get_key_name %> container.
 <br>Its ID(<% $existing_container->get_id %>) was not on the safe list. Deleting...
-<br><br>       
+<br><br>
 <%perl>
         my @killswitch;
         $killswitch[0] = $existing_container;
         $picture->delete_elements(\@killswitch);
         $picture->save;
-      } 
+      }
     }
   }
 
@@ -95,7 +95,7 @@ $existing_container->get_key_name %> containers.
 
   #OK, we now have all the containers we need.
   #Loop through them. If they already have pictures, leave them alone.
-  #If they don't have pictures, create them and relate them. 
+  #If they don't have pictures, create them and relate them.
   foreach my $working_container($picture->get_containers(keys %element_names_and_sizes)) {
     $m->out('<br><br>working on container with ID: ' . $working_container->get_id . '.<br>');
     if ($working_container->get_related_media) {
@@ -139,7 +139,7 @@ $existing_container->get_key_name %> containers.
 
       #check if there is already an image with the same URI in the Bricolage library.
       #If there is, open that media document. Otherwise create a new one.
-  
+
       my @existing_media_document = Bric::Biz::Asset::Business::Media->list({
         'uri' => $new_uri,
         'active' => 1

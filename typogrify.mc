@@ -20,7 +20,7 @@ B<Typogrify>
   i : inverted old school dashes
   e : ellipses
   w : convert &quot; entities to " for Dreamweaver users
-  
+
   1 : all of the above
   2 : all of the above, using old school en- and em- dash shortcuts
   3 : all of the above, using inverted old school en and em- dash shortcuts
@@ -107,14 +107,14 @@ modification, are permitted provided that the following conditions are met:
     without specific prior written permission.
 
 This software is provided by the copyright holders and contributors "as is"
-and any express or implied warranties, including, but not limited to, the 
-implied warranties of merchantability and fitness for a particular purpose 
-are disclaimed. In no event shall the copyright owner or contributors be 
-liable for any direct, indirect, incidental, special, exemplary, or 
-consequential damages (including, but not limited to, procurement of 
-substitute goods or services; loss of use, data, or profits; or business 
-interruption) however caused and on any theory of liability, whether in 
-contract, strict liability, or tort (including negligence or otherwise) 
+and any express or implied warranties, including, but not limited to, the
+implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. In no event shall the copyright owner or contributors be
+liable for any direct, indirect, incidental, special, exemplary, or
+consequential damages (including, but not limited to, procurement of
+substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in
+contract, strict liability, or tort (including negligence or otherwise)
 arising in any way out of the use of this software, even if advised of the
 possibility of such damage.
 
@@ -393,7 +393,7 @@ my $SmartQuotes = sub {
     my $in_pre = 0;  # Keep track of when we're inside <pre> or <code> tags
 
     my $prev_token_last_char = "";  # This is a cheat, used to get some context
-                                    # for one-character tokens that consist of 
+                                    # for one-character tokens that consist of
                                     # just a quote char. What we do is remember
                                     # the last character of the previous text
                                     # token, to use as context to curl single-
@@ -434,7 +434,7 @@ my $SmartQuotes = sub {
                     }
                 }
                 else {
-                    # Normal case:                  
+                    # Normal case:
                     $t = &EducateQuotes($t);
                 }
 
@@ -466,11 +466,11 @@ my $SmartDashes = sub {
     }
     elsif ($attr == 2) {
         # use old smart dash shortcuts, "--" for en, "---" for em
-        $dash_sub_ref = $EducateDashesOldSchool; 
+        $dash_sub_ref = $EducateDashesOldSchool;
     }
     elsif ($attr == 3) {
         # inverse of 2, "--" for em, "---" for en
-        $dash_sub_ref = $EducateDashesOldSchoolInverted; 
+        $dash_sub_ref = $EducateDashesOldSchoolInverted;
     }
 
     my $tokens;
@@ -676,7 +676,7 @@ my $initial_quotes = sub {
 my $caps = sub {
     my $work = shift;
     my $in_skipped_tag = 0;
-    
+
     my $cap_finder_1 = '(\b[A-Z\d]*[A-Z]\d*[A-Z][A-Z\d]*\b)';
     my $cap_finder_2 = '(\b[A-Z]+\.\s?(?:[A-Z]+\.\s?)+)';
     my $cap_finder = '(?:'.$cap_finder_1.'|'.$cap_finder_2.'(?:\s|\b|$))';
@@ -736,7 +736,7 @@ my $SmartyPants = sub {
     # 1 : set all
     # 2 : set all, using old school en- and em- dash shortcuts
     # 3 : set all, using inverted old school en and em- dash shortcuts
-    # 
+    #
     # q : quotes
     # b : backtick quotes (``double'' only)
     # B : backtick quotes (``double'' and `single')
@@ -797,7 +797,7 @@ my $SmartyPants = sub {
     my $in_pre = 0;  # Keep track of when we're inside <pre> or <code> tags.
 
     my $prev_token_last_char = "";  # This is a cheat, used to get some context
-                                    # for one-character tokens that consist of 
+                                    # for one-character tokens that consist of
                                     # just a quote char. What we do is remember
                                     # the last character of the previous text
                                     # token, to use as context to curl single-
@@ -854,7 +854,7 @@ my $SmartyPants = sub {
                         }
                     }
                     else {
-                        # Normal case:                  
+                        # Normal case:
                         $t = $EducateQuotes->($t);
                     }
                 }

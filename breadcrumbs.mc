@@ -20,7 +20,7 @@ Tobias Kremer & Kirsten Frste
 
 <%perl>
    my @path = ( '<a href="/">Home</a>' );
-   my $cat = $burner->get_cat; 
+   my $cat = $burner->get_cat;
    my @objs = $cat->ancestry();
 
    push( @path, map { '<a href="' . $_->ancestry_dir() . '">' . $_->get_name() . '</a>' } grep { $_->get_name() !~ /Root Category/i } @objs );

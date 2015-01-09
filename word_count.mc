@@ -12,7 +12,7 @@ word_count.mc -- Counts the number of words in a story
 =head1 DESCRIPTION
 
 Counts the number of words in the given elements of the current
-story. 
+story.
 
 =over 4
 
